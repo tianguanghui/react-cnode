@@ -15,8 +15,10 @@ Tool.ajax = function (mySetting) {
         type: 'GET', //请求的方式
         data: {}, //发给服务器的数据
         dataType: 'json',
-        success: function (text) { }, //请求成功执行方法
-        error: function () { } //请求失败执行方法
+        success: function (text) {
+        }, //请求成功执行方法
+        error: function () {
+        } //请求失败执行方法
     };
 
 
@@ -70,6 +72,7 @@ Tool.ajax = function (mySetting) {
             }
         }
     }
+
     xhr.end = function () {
         xhr.removeEventListener('readystatechange', httpEnd, false);
     }
@@ -86,6 +89,7 @@ Tool.ajax = function (mySetting) {
         str = str.replace(/#/g, '%23');
         return str;
     }
+
     return xhr;
 };
 /**
@@ -100,8 +104,10 @@ Tool.post = function (pathname, data, success, error) {
         url: target + pathname, //默认ajax请求地址
         type: 'POST', //请求的方式
         data: data, //发给服务器的数据
-        success: success || function () { }, //请求成功执行方法
-        error: error || function () { } //请求失败执行方法
+        success: success || function () {
+        }, //请求成功执行方法
+        error: error || function () {
+        } //请求失败执行方法
     };
     return Tool.ajax(setting);
 };
@@ -117,15 +123,17 @@ Tool.get = function (pathname, data, success, error) {
         url: target + pathname, //默认ajax请求地址
         type: 'GET', //请求的方式
         data: data, //发给服务器的数据
-        success: success || function () { }, //请求成功执行方法
-        error: error || function () { } //请求失败执行方法
+        success: success || function () {
+        }, //请求成功执行方法
+        error: error || function () {
+        } //请求失败执行方法
     };
     return Tool.ajax(setting);
 };
 
 /**
  * 格式化时间
- * 
+ *
  * @param {any} t
  * @returns
  */
@@ -151,7 +159,7 @@ Tool.formatDate = function (str) {
 
 /**
  * 本地数据存储或读取
- * 
+ *
  * @param {any} key
  * @param {any} value
  * @returns
@@ -166,7 +174,7 @@ Tool.localItem = function (key, value) {
 
 /**
  * 删除本地数据
- * 
+ *
  * @param {any} key
  * @returns
  */
@@ -177,4 +185,4 @@ Tool.removeLocalItem = function (key) {
     return localStorage.removeItem();
 }
 
-export { Tool, merged, config }
+export {Tool, merged, config}

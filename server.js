@@ -5,12 +5,12 @@ var config = require('./webpack.config');
 //启动服务
 var server = new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
-	// 相当于通过本地node服务代理请求到了http://cnodejs.org/api
+    // 相当于通过本地node服务代理请求到了http://cnodejs.org/api
     proxy: {
-	    "/api/*": {
-		    target: "https://cnodejs.org",
-		    secure: false
-	    }
+        "/api/*": {
+            target: "https://cnodejs.org",
+            secure: false
+        }
     },
     stats: {
         colors: true

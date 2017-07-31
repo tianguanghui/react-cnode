@@ -1,7 +1,7 @@
 import 'es6-promise/auto';
-import React, { Component } from 'react';
-import ReactDOM, { render } from 'react-dom';
-import { Provider } from 'react-redux';
+import React, {Component} from 'react';
+import ReactDOM, {render} from 'react-dom';
+import {Provider} from 'react-redux';
 import route from './Config/Route'; //路由配置
 import store from './Config/Store';
 
@@ -20,7 +20,7 @@ store.subscribe(function () {
 
 render(
     <Provider store={store}>
-	    {route}
+        {route}
     </Provider>,
     document.body.appendChild(document.createElement('div'))
 );
